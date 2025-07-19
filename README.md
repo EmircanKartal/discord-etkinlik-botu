@@ -36,6 +36,7 @@ Whenever anyone schedules a film night (title, time, description, banner), the b
 
 ---
 
+
 ## 🔍 How it works – under the hood
 
 1. **Gateway Intents**
