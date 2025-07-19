@@ -1,12 +1,10 @@
-// 🌐 Ping servisi için Expres
+// 🌐 Ping servisi
 const express = require('express');
 const app = express();
-
 app.get('/', (req, res) => res.send('Bot çalışıyor ✅'));
-
 app.listen(3000, () => console.log('🌐 Ping servisi dinlemede'));
 
-// 🤖 Discord botu
+// 🤖 Bot kodu
 require('dotenv').config();
 const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 
@@ -17,9 +15,7 @@ const client = new Client({
   ],
 });
 
-client.once('ready', () => {
-  console.log(`✅ Bot Aktif: ${client.user.tag}`);
-});
+client.once('ready', () => console.log(`✅ Bot Aktif: ${client.user.tag}`));
 
 client.on('guildScheduledEventCreate', async (event) => {
   try {
@@ -35,18 +31,22 @@ client.on('guildScheduledEventCreate', async (event) => {
     const description = event.description || '*Açıklama girilmemiş*';
 
     const embed = new EmbedBuilder()
-      .setTitle(`🎬 ${event.name}`)
-      .setDescription(
-        `🕒 **Zaman:** ${timestamp}\n📍 **Konum:** ${location}\n✨ **Açıklama:** ${description}`
-      )
+      .setTitle(`🎬  ${event.name}`)
+      .setDescription(`🕒  **Zaman:** ${timestamp}\n📍  **Konum:** ${location}\n✨  **Açıklama:** ${description}`)
       .setColor(0x00b0f4)
       .setURL(`https://discord.com/events/${event.guildId}/${event.id}`)
       .setTimestamp(new Date(event.scheduledStartTimestamp));
 
+    // 🎯 Yeni: coverImageURL() ile gerçek resim linkini al
+    const imageUrl = event.coverImageURL({ size: 1024 });
+    if (imageUrl) {
+      embed.setImage(imageUrl);
+    }
+
     await channel.send({ embeds: [embed] });
-    console.log('✅ Etkinlik mesajı gönderildi (görsel içermiyor)');
-  } catch (error) {
-    console.error('❌ Mesaj gönderilirken hata:', error.message);
+    console.log('✅ Etkinlik mesajı gönderildi (resimli embed)');
+  } catch (err) {
+    console.error('❌ Mesaj gönderilirken hata:', err.message);
   }
 });
 
