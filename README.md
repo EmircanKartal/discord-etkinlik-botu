@@ -28,11 +28,21 @@ Whenever anyone schedules a film night (title, time, description, banner), the b
 ---
 
 ## 🖼️ What it looks like
+[![Watch the video](https://github.com/user-attachments/assets/9d1870e4-7c74-4905-82c4-d2a43d8fdfee)](https://github.com/user-attachments/assets/9d1870e4-7c74-4905-82c4-d2a43d8fdfee)
+
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/36d9bd94-50f9-4585-a6c2-31cf4d69fdb2" width="420" alt="Creating an event"/>
+  <img src="https://github.com/user-attachments/assets/3492b800-b3fd-4f03-83f4-576bacc77883" width="45%" alt="Bot embed preview - 1"/>
   &nbsp;&nbsp;
-  <img src="https://github.com/user-attachments/assets/37cf4b24-8312-4398-adc0-0e28a25eb6f1" width="420" alt="Bot embed preview"/>
+  <img src="https://github.com/user-attachments/assets/2ac48008-44dc-4a0c-9fcb-ed69fb410e94" width="47.5%" alt="Bot embed preview - 2"/>
 </p>
+
+
+
+
+
+
+h
+
 
 ---
 
